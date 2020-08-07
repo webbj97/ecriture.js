@@ -1,11 +1,4 @@
-/*
- * @desc: 判断是否是NaN
- * @Author: 余光
- * @Email: webbj97@163.com
- * @Date: 2020-07-23 16:21:50
- */
 /**
- * The base implementation of `isNaN` without support for number objects.
  *
  * @private
  * @param {*} value The value to check.
