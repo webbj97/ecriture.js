@@ -19,6 +19,6 @@ Array.prototype.newEvery = function(callback, target = this) {
 
 const newArr = [1, 2, 3, 4, 5].newEvery((item, index, array) => {
     return item > 2;
-})
+}, [2,3,4,5])
 
 console.log('newArr:', newArr);
