@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const garde = [
+            {name: "李丽", id: "1", score: 98},
+            {name: "刘明", id: "2", score: 70},
+            {name: "宋飞", id: "3", score: 94},
+            {name: "李珊", id: "4", score: 86},
+            {name: "黄海", id: "5", score: 86},
+            {name: "彭峰", id: "6", score: 45},
+            {name: "赵磊", id: "7", score: 72},
+            {name: "毛宁", id: "8", score: 96},
+            {name: "余凯", id: "9", score: 55},
+            {name: "钱伟", id: "10", score: 84}
+        ]
+        // 获取结果
+        function getVir(arr) {
+            const length = arr.length; // 总人数 = 分母
+            let sum = 0; // 和
+            let pass = 0; // 及格人数
+            let unpassArr = []; // 不及格人数组
+            arr.forEach(item => {
+                let score = item.score;
+                if (score >= 60) pass++;
+                if (score < 60) unpassArr.push(item);
+                sum += score; // 记录总分
+            });
+            const avg = (sum / length).toFixed(2); // 小数点后保留2位
+            return {
+                avg, // 平均值
+                pass: pass * 100 / length + '%', // 及格率
+                unpassArr, // 不及格人数组
+            };
+        }
+
+
+        const avg = getVir(garde)
+        console.log('avg:', avg);
+    </script>
+</body>
+
+</html>
